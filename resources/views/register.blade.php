@@ -1,5 +1,6 @@
 <x-app>
-  <form class="row g-3 form w-75 mt-3" action="#!">
+  <form class="row g-3 form w-75 mt-3" action="/registro" method="POST">
+    @csrf
     <div class="col-12 col-md-6">
       <label for="nombre" class="form-label">
         Nombre
@@ -46,7 +47,7 @@
       <label for="ccomunal" class="form-label">
         Consejo Comunal
       </label>
-      <input type="text" id="ccomunal" name="ccomunal" class="form-control" placeholder="Nombre Completo" aria-label="First name">
+      <input type="text" id="ccomunal" name="consejo_comunal" class="form-control" placeholder="Nombre Completo" aria-label="First name">
     </div>
     <div class="col-12 col-md-6">
       <label for="telefono" class="form-label">
