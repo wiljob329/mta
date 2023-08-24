@@ -15,10 +15,12 @@
 <body>
 
   <div class="row page overflow-hidden">
-    <div class="col-12 col-sm-6 px-0 img-page">
-      <img src="https://images.unsplash.com/photo-1675050757561-741bd739bc06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=900&q=60" alt="image from unsplash" class="img" />
+    <div class="col-12 col-md-6 px-0 img-page">
+      {{-- <img src="https://images.unsplash.com/photo-1675050757561-741bd739bc06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=900&q=60" alt="image from unsplash" class="img" /> --}}
+      <img src="./img/3141113.jpg" alt="image from unsplash" class="img" />
+
     </div>
-    <div class="col-12 col-sm-6 d-flex flex-column align-items-center justify-content-center main-page">
+    <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center main-page">
       <div class="welcome text-center mt-3">
         <a href="http://aguasdemerida.com.ve">
           <img src="./img/logo_aguas.png" alt="logoaguas" class="imgLogo" />
