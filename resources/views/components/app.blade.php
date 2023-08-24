@@ -14,11 +14,18 @@
 </head>
 <body>
 
-  <div class="row page">
-    <div class="col-md-6 px-0 img-page">
+  <div class="row page overflow-hidden">
+    <div class="col-12 col-sm-6 px-0 img-page">
       <img src="https://images.unsplash.com/photo-1675050757561-741bd739bc06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=900&q=60" alt="image from unsplash" class="img" />
     </div>
-    <div class="col-md-6 px-0 main-page">
+    <div class="col-12 col-sm-6 d-flex flex-column align-items-center justify-content-center main-page">
+      <div class="welcome text-center mt-3">
+        <a href="http://aguasdemerida.com.ve">
+          <img src="./img/logo_aguas.png" alt="logoaguas" class="imgLogo" />
+        </a>
+        <h2 class="mt-2 text-dark">Taquilla Unica Aguas de Mérida</h2>
+        <span class="guide">Mesas Técnicas de Aguas</span>
+      </div>
       {{$slot}}
       {{-- <footer class="border-top text-center small text-muted py-3">
         <p class="m-0">Copyright &copy; {{date('Y')}} <a href="/" class="text-muted">OurApp</a>. All rights reserved.</p>

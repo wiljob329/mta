@@ -1,14 +1,13 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: "Source Sans Pro", sans-serif;
     -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
-}
+    -moz-osx-font-smoothing: grayscale !important; 
+}*/
 
 .page {
-    min-height: calc(100vh - 20px);
+    min-height: 100vh;
 }
 
 .img-page {
@@ -31,17 +30,46 @@ body {
     width: 100%;
 }
 
-.main-page {
+/* .bg-img {
+    position: absolute;
+    right: -25%;
+    background-image: url(./img/logo_aguas.png);
+    filter: blur(70px);
+    -webkit-filter: blur(70px);
+
+    height: 100vh;
+    width: 100%;
+    z-index: -100;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+} */
+
+/* .main-page {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    background: radial-gradient(circle, #187f9b45 0%, #eee 45%);
-}
-.form-control {
+     background: radial-gradient(circle, #187f9b45 0%, #eee 45%); 
+} */
+
+/* .form-control {
     border: 1px solid #1c809c;
     background-color: transparent;
 }
+
+select {
+    border: 1px solid #1c809c;
+    background-color: transparent;
+}
+
+select option {
+    border: 1px solid #1c809c;
+    background-color: transparent !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+} */
 
 /* .form-control:-webkit-autofill,
 .form-control:-webkit-autofill:hover,
@@ -49,8 +77,8 @@ body {
 .form-control:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px rgba(102, 163, 177, 0.45) inset !important;
 } */
-.form-control:focus {
+/* .form-control:focus {
     outline: none;
     border: 1px solid #1c809cbb;
     background-color: transparent;
-}
+} */

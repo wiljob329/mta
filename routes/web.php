@@ -16,5 +16,10 @@ Route::get('/', function () {
     return view('homepage');
 });
 
+Route::get('/registrar', function () {
+    return view('register');
+});
+
+
 
 
