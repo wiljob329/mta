@@ -26,4 +26,5 @@
     </div>
 
   </form>
+  <div class="wmg">hola soy wmg</div>
 </x-app>
