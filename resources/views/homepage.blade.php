@@ -1,9 +1,6 @@
 <x-app>
   <form class="row g-3 form justify-content-center" action="#!">
     <div class="col-9">
-      <p>hola</p>
-    </div>
-    <div class="col-9">
       <label for="cedula" class="form-label">
         Cédula
       </label>
@@ -29,5 +26,4 @@
     </div>
 
   </form>
-  <div class="wmg">hola soy wmg</div>
 </x-app>
