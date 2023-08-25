@@ -1,5 +1,5 @@
 <x-app>
-  <form class="row g-3 form w-75 mt-3" action="#!">
+  <form class="row gx-3 gy-2 form w-75 mt-3 mt-md-1" action="#!">
     <div class="col-12 col-md-6">
       <label for="nombre" class="form-label">
         Nombre
@@ -46,7 +46,7 @@
       <label for="ccomunal" class="form-label">
         Consejo Comunal
       </label>
-      <input type="text" id="ccomunal" name="ccomunal" class="form-control" placeholder="Nombre Completo" aria-label="First name">
+      <input type="text" id="ccomunal" name="ccomunal" class="form-control" placeholder="Consejo Comunal" aria-label="First name">
     </div>
     <div class="col-12 col-md-6">
       <label for="telefono" class="form-label">
@@ -58,10 +58,10 @@
       <label for="direccion" class="form-label">
         Dirección
       </label>
-      <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Nombre Completo" aria-label="First name">
+      <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Dirección" aria-label="First name">
     </div>
     <div class="col-12">
-      <button type="submit" class="btn btn-primary">Registrarse</button>
+      <button type="submit" class="btn btn-primary mt-2">Registrarse</button>
     </div>
   </form>
 </x-app>

@@ -14,19 +14,19 @@
 </head>
 <body>
 
-  <div class="row page overflow-hidden">
-    <div class="col-12 col-md-6 px-0 img-page">
+  <div class="row page d-flex">
+    <div class="col-12 col-md-6 px-0 img-page order-last order-md-first">
       {{-- <img src="https://images.unsplash.com/photo-1675050757561-741bd739bc06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=900&q=60" alt="image from unsplash" class="img" /> --}}
-      <img src="./img/3141113.jpg" alt="image from unsplash" class="img" />
+      <img src="./img/3141113.jpg" alt="image from unsplash" class="img-fluid h-100" />
 
     </div>
-    <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center main-page">
+    <div class="col-12 col-md-6 d-flex my-5 my-md-0 order-first order-md-last flex-column align-items-center justify-content-center main-page">
       <div class="welcome text-center mt-3">
         <a href="http://aguasdemerida.com.ve">
           <img src="./img/logo_aguas.png" alt="logoaguas" class="imgLogo" />
         </a>
-        <h2 class="mt-2 text-dark">Taquilla Unica Aguas de Mérida</h2>
-        <span class="guide">Mesas Técnicas de Aguas</span>
+        <h2 class="mt-2 mb-0">Taquilla Unica Aguas de Mérida</h2>
+        <span class="">MESAS TÉCNICAS DE AGUAS</span>
       </div>
       {{$slot}}
       {{-- <footer class="border-top text-center small text-muted py-3">
@@ -40,9 +40,5 @@
   <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-  <script>
-    $('[data-toggle="tooltip"]').tooltip()
-
-  </script>
 </body>
 </html>
