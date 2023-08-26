@@ -1,16 +1,16 @@
 <x-app>
   <form class="row g-3 form justify-content-center" action="#!">
     <div class="col-9">
-      <label for="cedula" class="form-label">
+      <label for="login_cedula" class="form-label">
         Cédula
       </label>
-      <input name="cedula" type="text" class="form-control form-control-lg" id="cedula" placeholder="Cédula" />
+      <input name="login_cedula" type="text" class="form-control form-control-lg" id="cedula" placeholder="Cédula" />
     </div>
     <div class="col-9">
-      <label for="contraseña" class="form-label">
+      <label for="login_contraseña" class="form-label">
         Contraseña
       </label>
-      <input name="contraseña" type="password" class="form-control form-control-lg" id="contraseña" placeholder="Contraseña" />
+      <input name="login_contraseña" type="password" class="form-control form-control-lg" id="login_contraseña" placeholder="Contraseña" />
     </div>
 
     <p class="error"></p>

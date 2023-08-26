@@ -23,7 +23,6 @@ class Registro_usuario extends Model
         'direccion',
         'consejo_comunal',
         'parroquia_id'
-
     ];
 
      /**
