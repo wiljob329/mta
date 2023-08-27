@@ -1,16 +1,23 @@
 <x-app>
-  <form class="row g-3 form justify-content-center" action="#!">
+  <form class="row g-3 form justify-content-center" action="/login" method="POST">
+    @csrf
     <div class="col-9">
-      <label for="login_cedula" class="form-label">
+      <label for="cedula" class="form-label">
         Cédula
       </label>
-      <input name="login_cedula" type="text" class="form-control form-control-lg" id="cedula" placeholder="Cédula" />
+      <input name="cedula" type="text" class="form-control form-control-lg" id="cedula" placeholder="Cédula" />
+      @error('cedula')
+      <p class="m-0 p-2 small alert alert-danger shadow-sm"> {{$message}} </p>
+      @enderror
     </div>
     <div class="col-9">
-      <label for="login_contraseña" class="form-label">
+      <label for="password" class="form-label">
         Contraseña
       </label>
-      <input name="login_contraseña" type="password" class="form-control form-control-lg" id="login_contraseña" placeholder="Contraseña" />
+      <input name="password" type="password" class="form-control form-control-lg" id="password" placeholder="Contraseña" />
+      @error('password')
+      <p class="m-0 p-2 small alert alert-danger shadow-sm"> {{$message}} </p>
+      @enderror
     </div>
 
     <p class="error"></p>
@@ -22,7 +29,7 @@
       <button class="btn btn-primary btn-lg p-2">Iniciar sesión</button>
     </div>
     <div class="col-9 text-center">
-      <p><a href="./registrar">No tienes cuenta? Registrate aquí</a></p>
+      <p><a href="/registrar">No tienes cuenta? Registrate aquí</a></p>
     </div>
 
   </form>

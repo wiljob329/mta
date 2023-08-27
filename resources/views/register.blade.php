@@ -29,11 +29,11 @@
       @enderror
     </div>
     <div class="col-12 col-md-6">
-      <label for="contraseña" class="form-label">
+      <label for="password" class="form-label">
         Contraseña<span class="text-danger">*</span>
       </label>
-      <input type="password" id="contraseña" name="contraseña" class="form-control" placeholder="Contraseña" aria-label="Last name">
-      @error('contraseña')
+      <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" aria-label="Last name">
+      @error('password')
       <p class="m-0 p-2 small alert alert-danger shadow-sm"> {{$message}} </p>
       @enderror
     </div>

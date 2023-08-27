@@ -35,7 +35,7 @@ return [
     'date_format' => 'El campo :attribute no coincide con el formato :format.',
     'different' => 'El campo :attribute y :other deben ser diferentes.',
     'digits' => 'El campo :attribute debe tener :digits dígitos.',
-    'digits_between' => 'El campo :attribute debe estar entre :min y :max dígitos.',
+    'digits_between' => 'El campo :attribute debe tener entre :min y :max dígitos.',
     'dimensions' => 'El campo :attribute tiene dimensiones de imagen inválidas.',
     'distinct' => 'El campo :attribute tiene un valor duplicado.',
     'email' => 'El campo :attribute debe ser un correo electrónico válido.',
