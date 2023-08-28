@@ -20,7 +20,21 @@
       <img src="./img/3141113.jpg" alt="image from unsplash" class="img-fluid h-100" />
 
     </div>
+
+    @auth
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Navbar</span>
+      </div>
+    </nav>
+    <h1 class="display-6">Hello world</h1>
+
+    @else
+
     <div class="col-12 col-md-6 d-flex my-5 my-md-0 order-first order-md-last flex-column align-items-center justify-content-center main-page">
+      @php
+      @endphp
+
       <div class="welcome text-center mt-3">
         <a href="http://aguasdemerida.com.ve">
           <img src="./img/logo_aguas.png" alt="logoaguas" class="imgLogo" />
@@ -28,6 +42,8 @@
         <h2 class="mt-2 mb-0">Taquilla Unica Aguas de Mérida</h2>
         <span class="">MESAS TÉCNICAS DE AGUAS</span>
       </div>
+      @endauth
+
       {{$slot}}
       {{-- <footer class="border-top text-center small text-muted py-3">
         <p class="m-0">Copyright &copy; {{date('Y')}} <a href="/" class="text-muted">OurApp</a>. All rights reserved.</p>

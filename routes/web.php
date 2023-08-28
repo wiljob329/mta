@@ -22,7 +22,6 @@ Route::get('/registrar', function () {
 });
 
 //Routes de Usuario
-
 Route::post('/registro', [UserController::class, 'registro']);
 Route::post('/login', [UserController::class, 'login']);
 

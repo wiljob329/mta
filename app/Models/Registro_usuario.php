@@ -3,27 +3,31 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+
+
 use Illuminate\Database\Eloquent\Model;
 
-class Registro_usuario extends Model
+class Registro_usuario extends Authenticatable
 {
-    use HasFactory;
-
+    use HasApiTokens, HasFactory, Notifiable;
       /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
+    protected $table = "registro_usuarios";
     protected $fillable = [
         'cedula',
         'nombre',
         'correo',
-        'contraseña',
+        'password',
         'telefono',
         'direccion',
         'consejo_comunal',
         'parroquia_id'
-
     ];
 
      /**
@@ -32,7 +36,7 @@ class Registro_usuario extends Model
      * @var array<int, string>
      */
     protected $hidden = [
-        'contraseña',
+        'password',
         'remember_token',
     ];
 
@@ -43,6 +47,6 @@ class Registro_usuario extends Model
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'contraseña' => 'hashed',
+        'password' => 'hashed',
     ];
 }
