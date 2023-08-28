@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Registro_usuario;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -22,5 +21,18 @@ class UserController extends Controller
         ]);
         Registro_usuario::create($incomingFields);
         return 'HOLA';
+    }
+
+    public function login(Request $request) {
+        $incoming = $request->validate([
+            'cedula' => 'required',
+            'contraseña' => 'required'
+        ]);
+
+        if (auth()->attempt(['cedula' => $incoming['cedula'], 'contraseña' => $incoming['contraseña']])) {
+            return "congratss!!!";
+        }else {
+            return "error!!!!"; 
+        }
     }
 }
