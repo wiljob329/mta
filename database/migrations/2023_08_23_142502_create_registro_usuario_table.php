@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('cedula')->primary();
             $table->string('nombre');
             $table->string('correo')->unique();
-            $table->string('contraseña');
+            $table->string('password');
             $table->string('telefono');
             $table->string('direccion');
             $table->string('consejo_comunal');
