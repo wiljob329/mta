@@ -12,7 +12,11 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
 
-    public function login(Request $request) {
+    public function create() {
+        return view('homepage');
+    }
+
+    public function store(Request $request) {
         $incomingFields = $request->validate([
             'cedula' => ['required', 'min:6', 'max:8'],
             'password' => ['required', 'min:5']
@@ -25,7 +29,7 @@ class UserController extends Controller
         {
             $request->session()->regenerate();
             // return 'Felicitaciones!! haz entrado usuario de nivel 1';
-            return redirect('/');
+            return redirect()->route('login.index');
 
         }else if (auth()->attempt([
             'cedula' => $incomingFields['cedula'],
@@ -50,33 +54,6 @@ class UserController extends Controller
 
     }
 
-    public function registro(Request $request) {
-        $request->validate([
-            'nombre' => ['required', 'min:6'],
-            'cedula' => ['required', 'digits_between:6, 8', Rule::unique('registro_usuarios', 'cedula')],
-            'correo' => ['required', 'email', Rule::unique('registro_usuarios', 'correo')],
-            'password' => ['required', 'min:5'],
-            'consejo_comunal' => ['required', 'min:6'],
-            'telefono' => ['required', 'digits_between:5, 11'],
-            'direccion' => ['required']
-        ]);
-
-        $user = Registro_usuario::create([
-            'nombre' => $request->nombre,
-            'cedula' => $request->cedula,
-            'correo' => $request->correo,
-            'password' => Hash::make($request->password),
-            'telefono' => $request->telefono,
-            'direccion' => $request->direccion,
-            'consejo_comunal' => $request->consejo_comunal,
-
-        ]);
-        event(new Registered($user));
-
-        Auth::login($user);
-        return redirect('/');
-        // Registro_usuario::create($incomingFields);
-        // return $incomingFields;
-    }
+  
 
 }
