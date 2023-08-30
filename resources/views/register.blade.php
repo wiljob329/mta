@@ -41,7 +41,7 @@
       <label for="municipio" class="form-label">
         Municipio<span class="text-danger">*</span>
       </label>
-      <select id="municipio" name="municipio" class="form-select">
+      <select id="municipio" class="form-select">
         <option value="all">Choose...</option>
         <option value="other">...</option>
       </select>

@@ -20,20 +20,18 @@
       <img src="./img/3141113.jpg" alt="image from unsplash" class="img-fluid h-100" />
 
     </div>
-
-    @auth
-    <nav class="navbar bg-light">
-      <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Navbar</span>
-      </div>
-    </nav>
-    <h1 class="display-6">Hello world</h1>
-
-    @else
-
     <div class="col-12 col-md-6 d-flex my-5 my-md-0 order-first order-md-last flex-column align-items-center justify-content-center main-page">
-      @php
-      @endphp
+
+      @auth
+      <nav class="navbar bg-light">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">Navbar</span>
+        </div>
+      </nav>
+      <h1 class="display-6">Hello {{auth()->user()->nombre}}</h1>
+
+      @else
+
 
       <div class="welcome text-center mt-3">
         <a href="http://aguasdemerida.com.ve">
