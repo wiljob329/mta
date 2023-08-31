@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('integrantes_mta', function (Blueprint $table) {
+        Schema::create('integrantes', function (Blueprint $table) {
             $table->string('cedula_integrante')->primary();
             $table->string('nombre_integrante');
             $table->string('apellido_integrante');
             $table->string('correo_integrante')->nullable();
             $table->string('telefono_integrante')->nullable();
             $table->string('cargo_integrante');
-            $table->unsignedBigInteger('mta_id');
-            $table->foreign('mta_id')->references('id')->on('mesa_tecnica');
+            $table->unsignedBigInteger('mesa_tecnica_id');
+            // $table->foreign('mesa_tecnica_id')->references('id')->on('mesa_tecnicas');
             //$table->foreignId('mta_id')->constrained()->onDelete('cascade');
             $table->string('doc_copia_cedula');
             $table->string('doc_rif');

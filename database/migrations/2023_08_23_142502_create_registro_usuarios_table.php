@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('registro_usuarios', function (Blueprint $table) {
+            $table->id();
             $table->string('cedula')->unique();
             $table->string('nombre');
             $table->string('correo')->unique();
@@ -20,7 +21,7 @@ return new class extends Migration
             $table->string('direccion');
             $table->string('consejo_comunal');
             $table->unsignedBigInteger('parroquia_id')->default(4);
-            // $table->foreign('parroquia_id')->references('id')->on('parroquia');
+            // $table->foreign('parroquia_id')->references('id')->on('parroquias');
             $table->timestamps();
             $table->integer('nivel')->default(1);
         });

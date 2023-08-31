@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Registro_usuario extends Authenticatable
+class Registro_Usuario extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
       /**
@@ -46,7 +46,12 @@ class Registro_usuario extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function parroquia()
+    {
+        return $this->belongsTo(Parroquia::class);
+    }
+    
 }

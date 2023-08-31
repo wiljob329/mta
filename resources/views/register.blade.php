@@ -42,8 +42,10 @@
         Municipio<span class="text-danger">*</span>
       </label>
       <select id="municipio" class="form-select">
-        <option value="all">Choose...</option>
-        <option value="other">...</option>
+        <option selected>Seleccionar Municipio</option>
+        @foreach ($municipios as $municipio)
+        <option value="{{$municipio->id}}">{{$municipio->municipio}}</option>
+        @endforeach
       </select>
       @error('municipio')
       <p class="m-0 p-2 small alert alert-danger shadow-sm"> {{$message}} </p>
@@ -54,8 +56,8 @@
         Parroquia<span class="text-danger">*</span>
       </label>
       <select id="parroquia" name="parroquia" class="form-select">
-        <option>Choose...</option>
-        <option>...</option>
+        <option selected>Seleccionar Parroquia</option>
+        <option value="{{}}">{{}}</option>
       </select>
       @error('parroquia')
       <p class="m-0 p-2 small alert alert-danger shadow-sm"> {{$message}} </p>

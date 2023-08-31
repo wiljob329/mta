@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Municipio;
+use App\Models\Parroquia;
 use App\Models\Registro_usuario;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -13,7 +15,8 @@ class RegistroController extends Controller
 {
 
     public function create() {
-        return view('register');
+        $municipios = Municipio::all();
+        return view('register', compact('municipios'));
     }
     
     public function store(Request $request) {
@@ -43,5 +46,19 @@ class RegistroController extends Controller
         return redirect()->route('login.index');
         // Registro_usuario::create($incomingFields);
         // return $incomingFields;
+    }
+
+    public function parroquias(Request $request)
+    {
+
+        $parent_id = $request->mun_id;
+         
+        $subcategories = Parroquia::where('id',$parent_id)
+                              ->with('subcategories')
+                              ->get();
+        return response()->json([
+            'subcategories' => $subcategories
+        ]);
+
     }
 }

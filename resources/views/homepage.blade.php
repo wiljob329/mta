@@ -29,7 +29,7 @@
       <button class="btn btn-primary btn-lg p-2">Iniciar sesión</button>
     </div>
     <div class="col-9 text-center">
-      <p><a href="/registrar">No tienes cuenta? Registrate aquí</a></p>
+      <p><a href="{{route('registro')}}">No tienes cuenta? Registrate aquí</a></p>
     </div>
 
   </form>

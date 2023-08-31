@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('registro_usuarios', function (Blueprint $table) {
+        Schema::create('municipios', function (Blueprint $table) {
             $table->id();
+            $table->string('municipio');
         });
     }
 
@@ -21,8 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('registro_usuarios', function (Blueprint $table) {
-            $table->dropColumn('id');
-        });
+        Schema::dropIfExists('municipio');
     }
 };
