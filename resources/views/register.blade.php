@@ -57,7 +57,6 @@
       </label>
       <select id="parroquia" name="parroquia" class="form-select">
         <option selected>Seleccionar Parroquia</option>
-        <option value="{{}}">{{}}</option>
       </select>
       @error('parroquia')
       <p class="m-0 p-2 small alert alert-danger shadow-sm"> {{$message}} </p>

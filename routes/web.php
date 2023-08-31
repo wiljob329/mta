@@ -31,7 +31,7 @@ Route::post('/login', [UserController::class, 'store']);
 //Routes de Usuario
 Route::get('/registro', [RegistroController::class, 'create'])->name('registro');
 Route::post('/registro', [RegistroController::class, 'store']);
-Route::post('/parroquias', [RegistroController::class, 'parroquias']);
+Route::post('/parroquias', [RegistroController::class, 'parroquias'])->name('parroquias');
 
 
 

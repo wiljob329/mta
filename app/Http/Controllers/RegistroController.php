@@ -53,11 +53,11 @@ class RegistroController extends Controller
 
         $parent_id = $request->mun_id;
          
-        $subcategories = Parroquia::where('id',$parent_id)
-                              ->with('subcategories')
+        $subcategories = Parroquia::where('municipio_id',$parent_id)
+                            //   ->with('municipio')
                               ->get();
         return response()->json([
-            'subcategories' => $subcategories
+            'parroquias' => $subcategories
         ]);
 
     }
