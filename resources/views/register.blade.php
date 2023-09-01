@@ -1,11 +1,11 @@
 <x-app>
-  <form class="row gx-3 gy-2 form w-75 mt-3 mt-md-1" action="/registro" method="POST">
+  <form class="row gx-3 gy-2 form w-75 mt-3 mt-md-1" action="{{route('registro.post')}}" method="POST">
     @csrf
     <div class="col-12 col-md-6">
       <label for="nombre" class="form-label">
         Nombre<span class="text-danger">*</span>
       </label>
-      <input value="{{old('nombre')}}" type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre Completo" aria-label="First name">
+      <input value="{{old('nombre')}}" type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre y Apellido Completos" aria-label="First name">
       @error('nombre')
       <p class="m-0 p-2 small alert alert-danger shadow-sm"> {{$message}} </p>
       @enderror
@@ -55,7 +55,7 @@
       <label for="parroquia" class="form-label">
         Parroquia<span class="text-danger">*</span>
       </label>
-      <select id="parroquia" name="parroquia" class="form-select">
+      <select id="parroquia" name="parroquia_id" class="form-select">
         <option selected>Seleccionar Parroquia</option>
       </select>
       @error('parroquia')

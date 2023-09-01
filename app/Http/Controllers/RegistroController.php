@@ -15,7 +15,7 @@ class RegistroController extends Controller
 {
 
     public function create() {
-        $municipios = Municipio::all();
+        $municipios = Municipio::all()->sortBy('municipio');
         return view('register', compact('municipios'));
     }
     
@@ -27,10 +27,11 @@ class RegistroController extends Controller
             'password' => ['required', 'min:5'],
             'consejo_comunal' => ['required', 'min:6'],
             'telefono' => ['required', 'digits_between:5, 11'],
-            'direccion' => ['required']
+            'direccion' => ['required'],
+            'parroquia_id' => ['required']
         ]);
 
-        $user = Registro_usuario::create([
+        $user = Registro_Usuario::create([
             'nombre' => $request->nombre,
             'cedula' => $request->cedula,
             'correo' => $request->correo,
@@ -38,6 +39,7 @@ class RegistroController extends Controller
             'telefono' => $request->telefono,
             'direccion' => $request->direccion,
             'consejo_comunal' => $request->consejo_comunal,
+            'parroquia_id' => $request->parroquia_id
 
         ]);
         event(new Registered($user));
