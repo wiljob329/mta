@@ -18,7 +18,6 @@
     <div class="col-12 col-md-6 px-0 img-page order-last order-md-first">
       {{-- <img src="https://images.unsplash.com/photo-1675050757561-741bd739bc06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=900&q=60" alt="image from unsplash" class="img" /> --}}
       <img src="./img/3141113.jpg" alt="image from unsplash" class="img-fluid h-100" />
-
     </div>
 
     @auth
@@ -32,9 +31,6 @@
     @else
 
     <div class="col-12 col-md-6 d-flex my-5 my-md-0 order-first order-md-last flex-column align-items-center justify-content-center main-page">
-      @php
-      @endphp
-
       <div class="welcome text-center mt-3">
         <a href="http://aguasdemerida.com.ve">
           <img src="./img/logo_aguas.png" alt="logoaguas" class="imgLogo" />

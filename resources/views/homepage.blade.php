@@ -5,12 +5,6 @@
       <label for="login_cedula" class="form-label">
         Cédula
       </label>
-<<<<<<< HEAD
-      <input name="cedula" type="text" class="form-control form-control-lg" id="cedula" placeholder="Cédula" autocomplete="off"/>
-    </div>
-    <div class="col-9">
-      <label for="login_contraseña" class="form-label">
-=======
       <input name="cedula" type="text" class="form-control form-control-lg" id="cedula" placeholder="Cédula" />
       @error('cedula')
       <p class="m-0 p-2 small alert alert-danger shadow-sm"> {{$message}} </p>
@@ -18,7 +12,6 @@
     </div>
     <div class="col-9">
       <label for="password" class="form-label">
->>>>>>> fb1e2fd41c7d9f5127bed57aac278effd5a2dbbf
         Contraseña
       </label>
       <input name="password" type="password" class="form-control form-control-lg" id="password" placeholder="Contraseña" />
