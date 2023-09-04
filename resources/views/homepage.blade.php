@@ -1,5 +1,5 @@
 <x-app>
-  <form class="row g-3 form justify-content-center" action="/login" method="POST">
+  <form class="row g-3 form justify-content-center" action="{{route('login.post')}}" method="POST">
     @csrf
     <div class="col-9">
       <label for="login_cedula" class="form-label">
@@ -23,13 +23,13 @@
     <p class="error"></p>
 
     <div class="col-9 justify-content-end">
-      <a href="#!">Olvidaste tu contraseña?</a>
+      <a href="{{route('reset')}}">Olvidaste tu contraseña?</a>
     </div>
     <div class="col-9 mx-auto">
-      <button class="btn btn-primary btn-lg p-2">Iniciar sesión</button>
+      <button class="btn btn-primary btn-lg p-2" type="submit">Iniciar sesión</button>
     </div>
     <div class="col-9 text-center">
-      <p><a href="/registrar">No tienes cuenta? Registrate aquí</a></p>
+      <p><a href="{{route('registro')}}">No tienes cuenta? Registrate aquí</a></p>
     </div>
 
   </form>

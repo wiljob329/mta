@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Registro_usuario;
+
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
 
-    public function login(Request $request) {
+    public function create() {
+        return view('homepage');
+    }
+
+    public function store(Request $request) {
         $incomingFields = $request->validate([
             'cedula' => ['required', 'min:6', 'max:8'],
             'password' => ['required', 'min:5']
@@ -21,7 +24,8 @@ class UserController extends Controller
             'nivel' => 1]))
         {
             $request->session()->regenerate();
-            return 'Felicitaciones!! haz entrado usuario de nivel 1';        
+            // return 'Felicitaciones!! haz entrado usuario de nivel 1';
+            return redirect()->route('login.index');
 
         }else if (auth()->attempt([
             'cedula' => $incomingFields['cedula'],
@@ -46,20 +50,6 @@ class UserController extends Controller
 
     }
 
-    public function registro(Request $request) {
-        $incomingFields = $request->validate([
-            'nombre' => ['required', 'min:6'],
-            'cedula' => ['required', 'digits_between:6, 8', Rule::unique('registro_usuarios', 'cedula')],
-            'correo' => ['required', 'email', Rule::unique('registro_usuarios', 'correo')],
-            'password' => ['required', 'min:5'],
-            'municipio' => ['required'],
-            'parroquia' => ['required'],
-            'consejo_comunal' => ['required', 'min:6'],
-            'telefono' => ['required', 'digits_between:5, 11'],
-            'direccion' => ['required']
-        ]);
-        Registro_usuario::create($incomingFields);
-        return $incomingFields;
-    }
+  
 
 }

@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('parroquia', function (Blueprint $table) {
-            $table->id();
-            $table->string('parroquia');
-            $table->unsignedBigInteger('municipio_id');
-            $table->foreign('municipio_id')->references('id')->on('municipio');
-            //$table->foreignId('municipio_id');
+        Schema::create('mesa_tecnicas', function (Blueprint $table) {
+            $table->id()->startingValue(6100);
+            $table->string('nombre_mta');
+            $table->string('telefono_encargado')->nullable();
+            $table->string('correo_encargado')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('parroquia');
+        Schema::dropIfExists('mesa_tecnica');
     }
 };

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('documentos_mta', function (Blueprint $table) {
+        Schema::create('documentos', function (Blueprint $table) {
             $table->id();
             $table->string('doc_constitucion_mta');
             $table->string('doc_promotor_mta')->nullable();
@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('doc_aval_cc')->nullable();
             $table->string('doc_constancia_cc');
             $table->string('doc_rif_mta');
-            $table->unsignedBigInteger('mta_id');
-            $table->foreign('mta_id')->references('id')->on('mesa_tecnica');
+            $table->unsignedBigInteger('mesa_tecnica_id');
+            // $table->foreign('mesa_tecnica_id')->references('id')->on('mesa_tecnicas');
             //$table->foreignId('mta_id')->constrained()->onDelete('cascade');
         });
     }
