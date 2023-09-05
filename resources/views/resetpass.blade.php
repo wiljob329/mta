@@ -1,5 +1,5 @@
 <x-app>
-  <form class="row g-3 form justify-content-center mt-5" action="{{route('reset.post')}}" method="POST">
+  <form class="row g-3 form justify-content-center my-5" action="{{route('reset.post')}}" method="POST">
     @csrf
     <div class="col-10">
       <p class="text-muted">Olvidaste tu contraseña? No te preocupes. Ingresa el correo que usaste a la hora de registrarte y te enviaremos un link para recuperar tu contraseña.</p>

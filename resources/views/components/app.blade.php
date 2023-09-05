@@ -25,6 +25,20 @@
 
     </div>
     <div class="col-12 col-md-6 d-flex my-5 my-md-0 order-first order-md-last flex-column align-items-center justify-content-center main-page">
+      @if (session()->has('success'))
+      <div class="container container--narrow">
+        <div class="alert alert-success text-center">
+          {{session('success')}}
+        </div>
+      </div>
+      @endif
+      @if (session()->has('error'))
+      <div class="container container--narrow">
+        <div class="alert alert-danger text-center">
+          {{session('failure')}}
+        </div>
+      </div>
+      @endif
 
       @auth
       <nav class="navbar bg-light">
@@ -58,5 +72,9 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   <script src="{{asset('assets/js/main.js')}}"></script>
+  <script>
+    $('[data-toggle="tooltip"]').tooltip()
+
+  </script>
 </body>
 </html>

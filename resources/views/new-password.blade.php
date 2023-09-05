@@ -1,12 +1,12 @@
 <x-app>
-  <form class="row g-3 form justify-content-center" action="{{route('login.post')}}" method="POST">
+  <form class="row g-3 form justify-content-center" action="{{route('reset.pass.user.post', $token)}}" method="POST">
     @csrf
     <input type="text" name="token" value="{{$token}}" hidden>
     <div class="col-9">
-      <label for="email" class="form-label">
+      <label for="correo" class="form-label">
         Correo
       </label>
-      <input name="email" type="email" class="form-control form-control-lg" id="email" placeholder="Correo" />
+      <input name="correo" type="email" class="form-control form-control-lg" id="correo" placeholder="Correo" />
       @error('correo')
       <p class="m-0 p-2 small alert alert-danger shadow-sm"> {{$message}} </p>
       @enderror
