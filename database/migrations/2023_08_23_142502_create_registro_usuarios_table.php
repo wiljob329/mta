@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->string('consejo_comunal');
-            $table->unsignedBigInteger('parroquia_id')->default(4);
-            // $table->foreign('parroquia_id')->references('id')->on('parroquias');
+            $table->unsignedBigInteger('parroquia_id');
+            $table->foreign('parroquia_id')->references('id')->on('parroquias');
             $table->timestamps();
             $table->integer('nivel')->default(1);
         });

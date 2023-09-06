@@ -54,4 +54,8 @@ class Registro_Usuario extends Authenticatable
         return $this->belongsTo(Parroquia::class);
     }
     
+    public function solicitud()
+    {
+        return $this->hasOne(Solicitud::class);
+    }
 }

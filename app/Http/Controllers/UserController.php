@@ -8,6 +8,18 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
 
+    public function homepage() {
+        return view('user-auth');
+    }
+
+    public function logout(Request $request)
+    {
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('login.index')->with('success', 'Saliste con exito!');
+    }
+
     public function create() {
         return view('homepage');
     }
@@ -25,7 +37,7 @@ class UserController extends Controller
         {
             $request->session()->regenerate();
             // return 'Felicitaciones!! haz entrado usuario de nivel 1';
-            return redirect()->route('login.index');
+            return redirect()->route('home')->with('success', 'logueado con exito');
 
         }else if (auth()->attempt([
             'cedula' => $incomingFields['cedula'],
@@ -45,7 +57,7 @@ class UserController extends Controller
 
         }else
         {
-            return 'No tiene acceso';
+            return redirect()->route('login.index')->with('error', 'Error, cedula o contraseña incorrectos');
         }
 
     }

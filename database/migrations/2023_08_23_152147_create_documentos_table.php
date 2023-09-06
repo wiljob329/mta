@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('doc_constancia_cc');
             $table->string('doc_rif_mta');
             $table->unsignedBigInteger('mesa_tecnica_id');
-            // $table->foreign('mesa_tecnica_id')->references('id')->on('mesa_tecnicas');
+            $table->foreign('mesa_tecnica_id')->references('id')->on('mesa_tecnicas');
             //$table->foreignId('mta_id')->constrained()->onDelete('cascade');
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('documentos_mta');
+        Schema::dropIfExists('documentos');
     }
 };

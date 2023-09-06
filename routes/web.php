@@ -22,12 +22,12 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', 'login');
 Route::get('/login', [UserController::class, 'create'])->name('login.index');
 Route::post('/login', [UserController::class, 'store'])->name('login.post');
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 
-//rutas registro usuario
-// Route::get('/registrar', function () {
-//     return view('register');
-// });
+Route::get('/homepage', [UserController::class, 'homepage'])->name('home')->middleware('auth');
+
+
 
 //Routes de Usuario
 Route::get('/registro', [RegistroController::class, 'create'])->name('registro');

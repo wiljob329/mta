@@ -27,10 +27,14 @@ class ResetPassword extends Controller
         $token = Str::random(64);
 
 
-        Mail::send('emails.forget-password', ['token' => $token], function($message) use($request){
+        $resmail = Mail::send('emails.forget-password', ['token' => $token], function($message) use($request){
             $message->to($request->correo);
             $message->subject('Reset Password');
         });
+
+        if (!$resmail){
+            return redirect()->route('reset')->with('error','Problemas al enviar el email intentalo mas tarde!');
+        }
         
         DB::table('password_reset_tokens')->insert([
             'email' => $request->correo,
@@ -39,7 +43,7 @@ class ResetPassword extends Controller
         ]);
 
 
-        return redirect()->to(route('reset'))->with('success', 'Se envio con exito el link a tu correo');
+        return redirect()->route('login.index')->with('success', 'Se envio con exito el link a tu correo');
 
     }
 
@@ -64,7 +68,7 @@ class ResetPassword extends Controller
             ])->first();
 
         if(!$updatePassword){
-                return redirect()->to(route('reset.pass.user'))->with('error', 'Datos Invalidos');
+                return redirect()->route('reset.pass.user')->with('error', 'Datos Invalidos');
         }
 
          Registro_Usuario::where('correo', $request->correo)
@@ -74,6 +78,6 @@ class ResetPassword extends Controller
         DB::table('password_reset_tokens')
             ->where(['email' => $request->correo])->delete();
         
-        return redirect()->to(route('login.index'))->with('success', 'Contraseña cambiada con exito');
+        return redirect()->route('login.index')->with('success', 'Contraseña cambiada con exito');
     }
 }

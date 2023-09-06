@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('telefono_integrante')->nullable();
             $table->string('cargo_integrante');
             $table->unsignedBigInteger('mesa_tecnica_id');
-            // $table->foreign('mesa_tecnica_id')->references('id')->on('mesa_tecnicas');
+            $table->foreign('mesa_tecnica_id')->references('id')->on('mesa_tecnicas');
             //$table->foreignId('mta_id')->constrained()->onDelete('cascade');
             $table->string('doc_copia_cedula');
             $table->string('doc_rif');
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('integrantes_mta');
+        Schema::dropIfExists('integrantes');
     }
 };
