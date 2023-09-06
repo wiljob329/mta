@@ -17,54 +17,77 @@
   <link rel="stylesheet" href="{{ asset('assets/main.css')}}" />
 </head>
 <body>
+  @if (session()->has('success'))
+  <script>
+    window.addEventListener('load', () => {
+      $.notify("{{session('success')}}", "success");
+    })
+
+  </script>
+  @endif
+  @if (session()->has('error'))
+  <script>
+    window.addEventListener('load', () => {
+      $.notify("{{session('error')}}", "error");
+    })
+
+  </script>
+  @endif
 
   <div class="row page d-flex">
     <div class="col-12 col-md-6 px-0 img-page order-last order-md-first">
       {{-- <img src="https://images.unsplash.com/photo-1675050757561-741bd739bc06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=900&q=60" alt="image from unsplash" class="img" /> --}}
-      <img src="{{asset('assets/img/3141113.jpg')}}" alt="image from unsplash" class="img-fluid h-100" />
+      <img src="{{asset('assets/img/3141113.jpg')}}" alt="pasos a seguir" class="img-fluid h-100" />
 
     </div>
-    <div class="col-12 col-md-6 d-flex my-5 my-md-0 order-first order-md-last flex-column align-items-center justify-content-center main-page">
-      @if (session()->has('success'))
-      <div class="container container--narrow">
-        <div class="alert alert-success text-center">
-          {{session('success')}}
-        </div>
-      </div>
-      @endif
-      @if (session()->has('error'))
-      <div class="container container--narrow">
-        <div class="alert alert-danger text-center">
-          {{session('failure')}}
-        </div>
-      </div>
-      @endif
 
-      @auth
-      <nav class="navbar bg-light">
+
+    @auth
+    <div class="col-12 col-md-6 px-0">
+      <nav class="navbar navbar-dark bg-light">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Navbar</span>
+          <a class="navbar-brand text-primary" href="http://www.aguasdemerida.com.ve">
+            <img src="{{asset('assets/img/logo_aguas.png')}}" alt="Logo" width="30" class="d-inline-block align-text-top">
+            <strong>Aguas de Mérida</strong>
+          </a>
+
+          <div class="nav-item dropdown me-4">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{strtok(auth()->user()->nombre, " ");}}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <form action="{{route('logout')}}" method="post">
+                  @csrf
+                  <input class="dropdown-item" type="submit" value="Logout" />
+                </form>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
-      <h1 class="display-6">Hello {{auth()->user()->nombre}}</h1>
-
+      {{$slot}}
+    </div>
     @else
+    <div class="col-12 col-md-6 d-flex my-5 my-md-0 order-first order-md-last flex-column align-items-center justify-content-center main-page">
 
 
-      <div class="welcome text-center mt-3">
-        <a href="http://aguasdemerida.com.ve">
+      <div class="welcome text-center my-4">
+        <a href="http://www.aguasdemerida.com.ve">
           <img src="{{asset('assets/img/logo_aguas.png')}}" alt="logoaguas" class="imgLogo" />
         </a>
         <h2 class="mt-2 mb-0">Taquilla Unica Aguas de Mérida</h2>
         <span class="">MESAS TÉCNICAS DE AGUAS</span>
       </div>
-      @endauth
-
       {{$slot}}
-      {{-- <footer class="border-top text-center small text-muted py-3">
-        <p class="m-0">Copyright &copy; {{date('Y')}} <a href="/" class="text-muted">OurApp</a>. All rights reserved.</p>
-      </footer> --}}
     </div>
+    @endauth
+
+
+    {{-- <footer class="border-top text-center small text-muted py-3">
+        <p class="m-0">Copyright &copy; {{date('Y')}} <a href="/" class="text-muted">OurApp</a>. All rights reserved.</p>
+    </footer> --}}
+
   </div>
 
   <!-- footer begins -->
@@ -72,9 +95,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   <script src="{{asset('assets/js/main.js')}}"></script>
-  <script>
-    $('[data-toggle="tooltip"]').tooltip()
+  <script src="{{asset('assets/js/notify.min.js')}}"></script>
 
-  </script>
 </body>
 </html>

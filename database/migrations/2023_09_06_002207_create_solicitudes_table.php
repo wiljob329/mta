@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mesa_tecnicas', function (Blueprint $table) {
-            $table->id()->startingValue(6100);
-            $table->string('nombre_mta');
-            $table->string('telefono_encargado')->nullable();
-            $table->string('correo_encargado')->nullable();
+        Schema::create('solicitudes', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
+            $table->unsignedInteger('estado');
+            $table->unsignedBigInteger('registro_usuario_id');
+            $table->foreign('registro_usuario_id')->references('id')->on('registro_usuarios');
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mesa_tecnicas');
+        Schema::dropIfExists('solicitudes');
     }
 };
