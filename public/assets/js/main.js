@@ -33,4 +33,15 @@ $(document).ready(function () {
 			},
 		});
 	});
+
+	$("#envioEmail").click(function (event) {
+		$(this).prop("disabled", true);
+
+		$("#emailform").trigger("submit");
+		setTimeout(function () {
+			$(this).prop("disabled", false);
+		}, 10000);
+
+		event.preventDefault();
+	});
 });

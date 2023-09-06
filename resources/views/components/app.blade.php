@@ -53,7 +53,7 @@
 
           <div class="nav-item dropdown me-4">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {{strtok(auth()->user()->nombre, " ");}}
+              {{ucfirst(strtok(auth()->user()->nombre, " "));}}
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li>

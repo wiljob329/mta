@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Solicitud;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
 
     public function homepage() {
-        return view('user-auth');
+        $solicitud = Solicitud::where('registro_usuario_id', auth()->user()->id)
+                                ->first();
+
+            return view('user-auth', compact('solicitud'));
+        // return var_dump($solicitud);
     }
 
     public function logout(Request $request)

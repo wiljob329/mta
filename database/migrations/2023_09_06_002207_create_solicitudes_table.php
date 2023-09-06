@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedInteger('estado');
-            $table->unsignedBigInteger('registro_usuario_id');
+            $table->unsignedBigInteger('registro_usuario_id')->unique();
             $table->foreign('registro_usuario_id')->references('id')->on('registro_usuarios');
         });
     }
