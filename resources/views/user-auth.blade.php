@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Registro de Mesa Técnica</h5>
-            <p class="card-text">Aquí podrá cargar los documentos para registrar la mesa tecnica en Aguas de Mérida.</p>
+            <p class="card-text">Aquí podrás adjuntar los documentos para registrar tu mesa técnica en Aguas de Mérida.</p>
             <a href="#" class="btn btn-primary">Registrar</a>
           </div>
         </div>
@@ -14,7 +14,7 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Solicitud</h5>
-            <p class="card-text">Para conformar la mesa técnica, se enviara un promotor de Aguas de Mérida para lorem ipsum</p>
+            <p class="card-text">Para conformar la mesa técnica, se enviara un promotor de Aguas de Mérida para su comunidad.</p>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#solicitudVisita" @if($solicitud) disabled @endif>
               Solicitar Visita
             </button>
