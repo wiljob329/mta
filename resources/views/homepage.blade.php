@@ -2,7 +2,7 @@
   <form class="row g-3 form justify-content-center" action="{{route('login.post')}}" method="POST">
     @csrf
     <div class="col-9">
-      <label for="cedula" class="form-label">
+      <label for="login_cedula" class="form-label">
         Cédula
       </label>
       <input name="cedula" type="text" class="form-control form-control-lg" id="cedula" placeholder="Cédula" />
