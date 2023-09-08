@@ -42,5 +42,3 @@ Route::post('/reset-password',[ResetPassword::class, 'store'])->name('reset.post
 Route::get('/user-reset-password/{token}',[ResetPassword::class, 'resetPassUser'])->name('reset.pass.user')->middleware('guest');
 Route::post('/user-reset-password/{token}',[ResetPassword::class, 'resetPassUserPost'])->name('reset.pass.user.post')->middleware('guest');
 
-
-

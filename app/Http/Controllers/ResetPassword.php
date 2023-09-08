@@ -13,12 +13,12 @@ use Illuminate\Support\Str;
 class ResetPassword extends Controller
 {
     //
-    public function create() 
+    public function create()
     {
         return view('resetpass');
     }
 
-    public function store(Request $request) 
+    public function store(Request $request)
     {
         $request->validate([
             'correo' => 'required|email|exists:registro_usuarios'
@@ -35,7 +35,7 @@ class ResetPassword extends Controller
         if (!$resmail){
             return redirect()->route('reset')->with('error','Problemas al enviar el email intentalo mas tarde!');
         }
-        
+
         DB::table('password_reset_tokens')->insert([
             'email' => $request->correo,
             'token' => $token,
@@ -71,13 +71,13 @@ class ResetPassword extends Controller
                 return redirect()->route('reset.pass.user')->with('error', 'Datos Invalidos');
         }
 
-         Registro_Usuario::where('correo', $request->correo)
+        Registro_Usuario::where('correo', $request->correo)
             ->update(['password' => Hash::make($request->password)
             ]);
 
         DB::table('password_reset_tokens')
             ->where(['email' => $request->correo])->delete();
-        
+
         return redirect()->route('login.index')->with('success', 'Contraseña cambiada con exito');
     }
 }
