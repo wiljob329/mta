@@ -71,9 +71,13 @@ class ResetPassword extends Controller
                 return redirect()->route('reset.pass.user')->with('error', 'Datos Invalidos');
         }
 
-        Registro_Usuario::where('correo', $request->correo)
-            ->update(['password' => Hash::make($request->password)
-            ]);
+        DB::table('registro_usuarios')
+            ->where([
+                'correo' => $request->correo
+            ])->update(['password' => Hash::make($request->password)]);
+        // Registro_Usuario::where('correo', $request->correo)
+        //     ->update(['password' => Hash::make($request->password)
+        //     ]);
 
         DB::table('password_reset_tokens')
             ->where(['email' => $request->correo])->delete();
