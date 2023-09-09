@@ -21,7 +21,7 @@ class UserController extends Controller
         auth()->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('login.index')->with('success', 'Saliste con exito!');
+        return redirect()->route('login.index');
     }
 
     public function create() {
