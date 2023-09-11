@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Solicitud;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
+
+    public function createComunitaria() {
+        Gate::authorize('comunitaria');
+        return view('comunitaria');
+    }
 
     public function homepage() {
         $solicitud = Solicitud::where('registro_usuario_id', auth()->user()->id)
@@ -49,7 +55,7 @@ class UserController extends Controller
             'nivel' => 2]))
         {
             $request->session()->regenerate();
-            return 'Felicitaciones!! haz entrado usuario de nivel 2';     
+            return redirect()->route('comunitaria')->with('success', 'Bienvenido a Comunitaria');
 
         }else if (auth()->attempt([
             'cedula' => $incomingFields['cedula'],
