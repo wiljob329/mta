@@ -15,6 +15,7 @@ Route::post('/login', [UserController::class, 'store'])->name('login.post')->mid
 Route::post('/logout', [UserController::class, 'logout'])->name('logout')->middleware('auth');
 Route::get('/homepage', [UserController::class, 'homepage'])->name('home')->middleware('auth');
 Route::post('/solicitud', [SolicitudController::class, 'store'])->name('solicitud')->middleware('auth');
+Route::get('/comunitaria', [UserController::class, 'createComunitaria'])->name('comunitaria')->middleware('auth');
 
 
 //Routes de Usuario

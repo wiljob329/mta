@@ -13,6 +13,9 @@ use Illuminate\Database\Eloquent\Model;
 class Registro_Usuario extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    const ROLE_COMUNITARIA = 2;
+    const ROLE_ADMIN = 3;
       /**
      * The attributes that are mass assignable.
      *
