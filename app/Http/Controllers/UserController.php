@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Solicitud;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
+
 
     public function homepage() {
         $solicitud = Solicitud::where('registro_usuario_id', auth()->user()->id)
@@ -21,7 +23,7 @@ class UserController extends Controller
         auth()->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('login.index')->with('success', 'Saliste con exito!');
+        return redirect()->route('login.index');
     }
 
     public function create() {
@@ -49,7 +51,7 @@ class UserController extends Controller
             'nivel' => 2]))
         {
             $request->session()->regenerate();
-            return 'Felicitaciones!! haz entrado usuario de nivel 2'; 
+            return redirect()->route('comunitaria')->with('success', 'Bienvenido a Comunitaria');
 
         }else if (auth()->attempt([
             'cedula' => $incomingFields['cedula'],
@@ -57,7 +59,7 @@ class UserController extends Controller
             'nivel' => 3]))
         {
             $request->session()->regenerate();
-            return 'Felicitaciones!! haz entrado usuario de nivel 3';        
+            return redirect()->route('admin')->with('success', 'Bienvenido admin');
 
         }else
         {

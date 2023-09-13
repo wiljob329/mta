@@ -10,6 +10,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   {{-- <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" /> --}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,6 +68,9 @@
         </div>
       </nav>
       {{$slot}}
+      {{-- <footer class="border-top text-center small text-muted py-3">
+        <p class="m-0">Copyright &copy; {{date('Y')}} <a href="/" class="text-muted">Aguas de Mérida</a>. All rights reserved.</p>
+      </footer> --}}
     </div>
     @else
     <div class="col-12 col-md-6 d-flex my-5 my-md-0 order-first order-md-last flex-column align-items-center justify-content-center main-page">
@@ -80,13 +84,13 @@
         <span class="">MESAS TÉCNICAS DE AGUAS</span>
       </div>
       {{$slot}}
+      {{-- <footer class="border-top text-center small text-muted">
+        <p class="m-0">Copyright &copy; {{date('Y')}} <a href="/" class="text-muted">Aguas de Mérida</a>.</p>
+      </footer> --}}
     </div>
     @endauth
 
 
-    {{-- <footer class="border-top text-center small text-muted py-3">
-        <p class="m-0">Copyright &copy; {{date('Y')}} <a href="/" class="text-muted">OurApp</a>. All rights reserved.</p>
-    </footer> --}}
 
   </div>
 
