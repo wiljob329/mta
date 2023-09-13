@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ResetPassword;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SolicitudController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +16,8 @@ Route::post('/login', [UserController::class, 'store'])->name('login.post')->mid
 Route::post('/logout', [UserController::class, 'logout'])->name('logout')->middleware('auth');
 Route::get('/homepage', [UserController::class, 'homepage'])->name('home')->middleware('auth');
 Route::post('/solicitud', [SolicitudController::class, 'store'])->name('solicitud')->middleware('auth');
-Route::get('/comunitaria', [UserController::class, 'createComunitaria'])->name('comunitaria')->middleware('auth');
+Route::get('/comunitaria', [RoleController::class, 'createComunitaria'])->name('comunitaria')->middleware('auth');
+Route::get('/admin', [RoleController::class, 'createAdmin'])->name('admin')->middleware('auth');
 
 
 //Routes de Usuario

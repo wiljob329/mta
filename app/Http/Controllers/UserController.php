@@ -9,10 +9,6 @@ use Illuminate\Support\Facades\Gate;
 class UserController extends Controller
 {
 
-    public function createComunitaria() {
-        Gate::authorize('comunitaria');
-        return view('comunitaria');
-    }
 
     public function homepage() {
         $solicitud = Solicitud::where('registro_usuario_id', auth()->user()->id)
@@ -63,7 +59,7 @@ class UserController extends Controller
             'nivel' => 3]))
         {
             $request->session()->regenerate();
-            return 'Felicitaciones!! haz entrado usuario de nivel 3';        
+            return redirect()->route('admin')->with('success', 'Bienvenido admin');
 
         }else
         {
