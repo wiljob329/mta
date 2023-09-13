@@ -29,7 +29,7 @@ class ResetPassword extends Controller
 
         $resmail = Mail::send('emails.forget-password', ['token' => $token], function($message) use($request){
             $message->to($request->correo);
-            $message->subject('Reset Password');
+            $message->subject('Restablecer Contraseña');
         });
 
         if (!$resmail){

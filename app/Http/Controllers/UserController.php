@@ -49,7 +49,7 @@ class UserController extends Controller
             'nivel' => 2]))
         {
             $request->session()->regenerate();
-            return 'Felicitaciones!! haz entrado usuario de nivel 2';     
+            return 'Felicitaciones!! haz entrado usuario de nivel 2'; 
 
         }else if (auth()->attempt([
             'cedula' => $incomingFields['cedula'],
