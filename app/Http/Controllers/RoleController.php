@@ -16,9 +16,7 @@ class RoleController extends Controller
 
     public function createComunitaria() {
         Gate::authorize('comunitaria');
-        $user = new Registro_Usuario;
-        $solicitudes = Solicitud::all();
-        // $solicitudes = Solicitud::whereBelongsTo($user, 'registro_usuario_id');
+        $solicitudes = Registro_Usuario::all();
         return view('comunitaria', compact('solicitudes'));
     }
 }

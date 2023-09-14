@@ -11,10 +11,11 @@ class UserController extends Controller
 
 
     public function homepage() {
+        Gate::authorize('user');
         $solicitud = Solicitud::where('registro_usuario_id', auth()->user()->id)
                                 ->first();
 
-            return view('user-auth', compact('solicitud'));
+        return view('user-auth', compact('solicitud'));
         // return var_dump($solicitud);
     }
 
