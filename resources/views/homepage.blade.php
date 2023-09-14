@@ -23,13 +23,13 @@
     <p class="error"></p>
 
     <div class="col-9 justify-content-end">
-      <a href="{{route('reset')}}">Olvidaste tu contraseña?</a>
+      <a href="{{route('reset')}}">¿Olvidaste tu contraseña?</a>
     </div>
     <div class="col-9 mx-auto">
       <button class="btn btn-primary btn-lg p-2" type="submit">Iniciar sesión</button>
     </div>
     <div class="col-9 text-center">
-      <p><a href="{{route('registro')}}">No tienes cuenta? Registrate aquí</a></p>
+      <p><a href="{{route('registro')}}">¿No tienes cuenta? Registrate aquí</a></p>
     </div>
 
   </form>

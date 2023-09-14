@@ -14,7 +14,7 @@
       <label for="cedula" class="form-label">
         Cédula<span class="text-danger">*</span>
       </label>
-      <input value="{{old('cedula')}}" type="text" id="cedula" name="cedula" class="form-control" placeholder="Cedula" aria-label="Last name">
+      <input value="{{old('cedula')}}" type="text" id="cedula" name="cedula" class="form-control" placeholder="Cédula" aria-label="Last name">
       @error('cedula')
       <p class="m-0 p-2 small alert alert-danger shadow-sm"> {{$message}} </p>
       @enderror

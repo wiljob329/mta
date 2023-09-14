@@ -43,7 +43,7 @@ class UserController extends Controller
         {
             $request->session()->regenerate();
             // return 'Felicitaciones!! haz entrado usuario de nivel 1';
-            return redirect()->route('home')->with('success', 'logueado con exito');
+            return redirect()->route('home')->with('success', 'logueado con éxito');
 
         }else if (auth()->attempt([
             'cedula' => $incomingFields['cedula'],
@@ -59,11 +59,11 @@ class UserController extends Controller
             'nivel' => 3]))
         {
             $request->session()->regenerate();
-            return redirect()->route('admin')->with('success', 'Bienvenido admin');
+            return redirect()->route('admin')->with('success', 'Bienvenido Administrador');
 
         }else
         {
-            return redirect()->route('login.index')->with('error', 'Error, cedula o contraseña incorrectos');
+            return redirect()->route('login.index')->with('error', 'Error, cédula o contraseña incorrectos');
         }
 
     }

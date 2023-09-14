@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="csrf-token" content="{{ csrf_token() }}" />
-  <title>Taquilla Unica MTA</title>
+  <title>Taquilla Única MTA</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -80,7 +80,7 @@
         <a href="http://www.aguasdemerida.com.ve">
           <img src="{{asset('assets/img/logo_aguas.png')}}" alt="logoaguas" class="imgLogo" />
         </a>
-        <h2 class="mt-2 mb-0">Taquilla Unica Aguas de Mérida</h2>
+        <h2 class="mt-2 mb-0">Taquilla Única Aguas de Mérida</h2>
         <span class="">MESAS TÉCNICAS DE AGUAS</span>
       </div>
       {{$slot}}

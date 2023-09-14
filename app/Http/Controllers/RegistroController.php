@@ -45,7 +45,7 @@ class RegistroController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-        return redirect()->route('home')->with('success', 'Usuario registrado con exito');
+        return redirect()->route('home')->with('success', 'Usuario registrado con éxito');
         // Registro_usuario::create($incomingFields);
         // return $incomingFields;
     }

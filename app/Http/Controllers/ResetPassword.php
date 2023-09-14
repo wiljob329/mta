@@ -33,7 +33,7 @@ class ResetPassword extends Controller
         });
 
         if (!$resmail){
-            return redirect()->route('reset')->with('error','Problemas al enviar el email intentalo mas tarde!');
+            return redirect()->route('reset')->with('error','Problemas al enviar el correo, intentalo mas tarde!');
         }
 
         DB::table('password_reset_tokens')->insert([
@@ -43,7 +43,7 @@ class ResetPassword extends Controller
         ]);
 
 
-        return redirect()->route('login.index')->with('success', 'Se envio con exito el link a tu correo');
+        return redirect()->route('login.index')->with('success', 'Se envio con éxito el link a tu correo');
 
     }
 
@@ -82,6 +82,6 @@ class ResetPassword extends Controller
         DB::table('password_reset_tokens')
             ->where(['email' => $request->correo])->delete();
 
-        return redirect()->route('login.index')->with('success', 'Contraseña cambiada con exito');
+        return redirect()->route('login.index')->with('success', 'Contraseña cambiada con éxito');
     }
 }

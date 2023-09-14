@@ -16,6 +16,6 @@ class SolicitudController extends Controller
 
         //return $solicitud;
 
-        return redirect()->route('home')->with('success', 'Datos enviados con exito');
+        return redirect()->route('home')->with('success', 'Datos enviados con éxito');
     }
 }
