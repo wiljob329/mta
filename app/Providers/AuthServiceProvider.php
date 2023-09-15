@@ -31,5 +31,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('admin', function(Registro_Usuario $user) {
             return $user->nivel == Registro_Usuario::ROLE_ADMIN;
         });
+
+        Gate::define('user', function(Registro_Usuario $user) {
+           return $user->nivel == Registro_Usuario::ROLE_USER; 
+        });
     }
 }

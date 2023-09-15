@@ -16,9 +16,14 @@ class RoleController extends Controller
 
     public function createComunitaria() {
         Gate::authorize('comunitaria');
-        $user = new Registro_Usuario;
-        $solicitudes = Solicitud::all();
-        // $solicitudes = Solicitud::whereBelongsTo($user, 'registro_usuario_id');
+        $solicitudes = Solicitud::where('estado', 1)->get();
         return view('comunitaria', compact('solicitudes'));
+    }
+
+
+    public function changeEstateSol(Request $request, Solicitud $solicitud) {
+        // Cambio de estado a la solicitud
+        $solicitud->update(['estado' => 2]);
+        return redirect()->route('comunitaria');
     }
 }

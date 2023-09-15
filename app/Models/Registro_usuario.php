@@ -14,6 +14,7 @@ class Registro_Usuario extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    const ROLE_USER = 1;
     const ROLE_COMUNITARIA = 2;
     const ROLE_ADMIN = 3;
       /**
@@ -59,6 +60,6 @@ class Registro_Usuario extends Authenticatable
     
     public function solicitud()
     {
-        return $this->hasOne(Solicitud::class);
+        return $this->hasOne(Solicitud::class, 'registro_usuario_id', 'id');
     }
 }
