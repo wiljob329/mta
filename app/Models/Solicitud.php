@@ -13,6 +13,6 @@ class Solicitud extends Model
 
     public function registro_usuario()
     {
-        return $this->belongsTo(Registro_Usuario::class, 'registro_usuario_id');
+        return $this->belongsTo(Registro_Usuario::class, 'registro_usuario_id', 'id');
     }
 }
