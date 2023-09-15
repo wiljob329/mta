@@ -60,7 +60,7 @@
               <li>
                 <form action="{{route('logout')}}" method="post">
                   @csrf
-                  <input class="dropdown-item" type="submit" value="Logout" />
+                  <input class="dropdown-item" type="submit" value="Cerrar Sesión" />
                 </form>
               </li>
             </ul>

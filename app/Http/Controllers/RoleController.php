@@ -19,4 +19,11 @@ class RoleController extends Controller
         $solicitudes = Solicitud::where('estado', 1)->get();
         return view('comunitaria', compact('solicitudes'));
     }
+
+
+    public function changeEstateSol(Request $request, Solicitud $solicitud) {
+        // Cambio de estado a la solicitud
+        $solicitud->update(['estado' => 2]);
+        return redirect()->route('comunitaria');
+    }
 }

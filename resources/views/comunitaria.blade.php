@@ -18,9 +18,10 @@
             </div>
             <div class="d-flex w-100 justify-content-between">
               <small>{{$user->registro_usuario->telefono}} | {{$user->registro_usuario->correo}} </small>
-              <form action="{{route('comunitaria.respuesta')}}" method="post">
+              <form action="{{route('comunitaria.respuesta', $user->id)}}" method="post">
+                @method('PUT')
                 @csrf
-                <button class="btn btn-primary col-2">Respondido</button>
+                <button class="btn btn-primary" type="submit">Respondido</button>
               </form>
             </div>
           </div>

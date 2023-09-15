@@ -18,7 +18,7 @@ Route::get('/homepage', [UserController::class, 'homepage'])->name('home')->midd
 Route::post('/solicitud', [SolicitudController::class, 'store'])->name('solicitud')->middleware('auth');
 
 Route::get('/comunitaria', [RoleController::class, 'createComunitaria'])->name('comunitaria')->middleware('auth');
-Route::post('/comunitaria', [RoleController::class, 'createComunitaria'])->name('comunitaria')->middleware('auth');
+Route::put('/comunitaria/{solicitud}', [RoleController::class, 'changeEstateSol'])->name('comunitaria.respuesta')->middleware('auth');
 
 Route::get('/admin', [RoleController::class, 'createAdmin'])->name('admin')->middleware('auth');
 
