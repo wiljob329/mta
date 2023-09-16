@@ -50,7 +50,7 @@
           <i class="fas fa-laugh-wink"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Taquilla Unica MTA</div> --}}
-        <img src="{{asset('assets/img/agm.png')}}" alt="logo" class="img-fluid">
+        <img src="{{asset('assets/img/mta2.png')}}" alt="logo" class="img-fluid">
       </a>
 
       <!-- Divider -->
@@ -73,9 +73,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="buttons.html">Vistas</a>
-            <a class="collapse-item" href="cards.html">Respondidas</a>
-            <a class="collapse-item" href="cards.html">Pendientes</a>
+            <a class="collapse-item" href="{{route('comunitaria.respondidas')}}">Respondidas</a>
+            <a class="collapse-item" href="{{route('comunitaria')}}">Pendientes</a>
           </div>
         </div>
       </li>

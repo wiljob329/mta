@@ -2,7 +2,7 @@
   <div class="col mb-4">
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary text-center">Solicitudes Pendientes</h6>
+        <h6 class="m-0 font-weight-bold text-primary text-center">Solicitudes Respondidas</h6>
       </div>
       <div class="card-body">
         <div class="list-group">
@@ -18,11 +18,7 @@
             </div>
             <div class="d-flex w-100 justify-content-between">
               <small>{{$user->registro_usuario->telefono}} | {{$user->registro_usuario->correo}} </small>
-              <form action="{{route('comunitaria.respuesta', $user->id)}}" method="post">
-                @method('PUT')
-                @csrf
-                <button class="btn btn-primary" type="submit">Respondido</button>
-              </form>
+              <small class="text-primary">Solicitud Respondida</small>
             </div>
           </div>
           @empty

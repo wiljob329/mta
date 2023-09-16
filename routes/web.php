@@ -17,9 +17,12 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout')->middl
 Route::get('/homepage', [UserController::class, 'homepage'])->name('home')->middleware('auth');
 Route::post('/solicitud', [SolicitudController::class, 'store'])->name('solicitud')->middleware('auth');
 
+//Comunitaria Routes
 Route::get('/comunitaria', [RoleController::class, 'createComunitaria'])->name('comunitaria')->middleware('auth');
+Route::get('/comunitaria-respondidas', [RoleController::class, 'solicitudRespondidas'])->name('comunitaria.respondidas')->middleware('auth');
 Route::put('/comunitaria/{solicitud}', [RoleController::class, 'changeEstateSol'])->name('comunitaria.respuesta')->middleware('auth');
 
+//Consultoria Routes
 Route::get('/admin', [RoleController::class, 'createAdmin'])->name('admin')->middleware('auth');
 
 

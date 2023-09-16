@@ -1,12 +1,31 @@
 <x-app>
   <div class="container-fluid p-0">
     <div class="row my-5 mx-2">
-      <div class="col-sm-6">
+      {{-- <div class="col-sm-6">
         <div class="card shadow">
           <div class="card-body">
             <h5 class="card-title">Registro de Mesa Técnica</h5>
             <p class="card-text">Aquí podrás adjuntar los documentos para registrar tu mesa técnica en Aguas de Mérida.</p>
-            <a href="#" class="btn btn-primary">Registrar</a>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registroMta">
+              Registrar
+            </button>
+          </div>
+        </div>
+      </div> --}}
+      <div class="col-sm-6">
+        <div class="card shadow">
+          <div class="card-body">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <h5>Registro de Mesa Técnica</h5>
+            </button>
+            <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p class="card-text">Aquí podrás adjuntar los documentos para registrar tu mesa técnica en Aguas de Mérida.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registroMta">
+                  Registrar
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -17,6 +36,28 @@
             <p class="card-text">Para conformar la mesa técnica, se enviara un promotor de Aguas de Mérida para su comunidad.</p>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#solicitudVisita" @if($solicitud) disabled @endif>
               Solicitar Visita
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 mt-3 mt-md-3">
+        <div class="card shadow">
+          <div class="card-body">
+            <h5 class="card-title">Registro de Mesa Técnica</h5>
+            <p class="card-text">Aquí podrás adjuntar los documentos para registrar tu mesa técnica en Aguas de Mérida.</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registroMta">
+              Registrar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 mt-3 mt-md-3">
+        <div class="card shadow">
+          <div class="card-body">
+            <h5 class="card-title">Registro de Mesa Técnica</h5>
+            <p class="card-text">Aquí podrás adjuntar los documentos para registrar tu mesa técnica en Aguas de Mérida.</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registroMta">
+              Registrar
             </button>
           </div>
         </div>
@@ -45,7 +86,7 @@
     </div>
   </div>
 
-  <!-- Modal -->
+  <!-- Modal solicitud -->
   <div class="modal fade" id="solicitudVisita" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="solicitudVisitaLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -55,6 +96,27 @@
         </div>
         <div class="modal-body">
           <p>Sus Datos seran enviados a la gerencia de Participación Comunitaria de Aguas de Mérida para planificar la visita y constitución de la Mesa Tecnica</p>
+        </div>
+        <div class="modal-footer">
+          <form class="row g-3" action="{{route('solicitud')}}" method="post">
+            @csrf
+            <button type="submit" class="btn btn-primary">Enviar Datos</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal registro -->
+  <div class="modal fade" id="registroMta" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="solicitudVisitaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="solicitudVisitaLabel">Registro u Actualización</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Registro</p>
         </div>
         <div class="modal-footer">
           <form class="row g-3" action="{{route('solicitud')}}" method="post">
