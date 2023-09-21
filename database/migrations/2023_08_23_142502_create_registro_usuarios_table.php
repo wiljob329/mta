@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('direccion');
             $table->string('consejo_comunal');
             $table->unsignedBigInteger('parroquia_id');
-            $table->foreign('parroquia_id')->references('id')->on('parroquias');
+            $table->foreign('parroquia_id')->references('id')->on('parroquias')->onDelete('cascade');
             $table->timestamps();
             $table->integer('nivel')->default(1);
         });

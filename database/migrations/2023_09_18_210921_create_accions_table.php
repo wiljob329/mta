@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('documentos', function (Blueprint $table) {
+        Schema::create('accions', function (Blueprint $table) {
             $table->id();
-            $table->string('doc_constitucion_mta');
-            $table->string('doc_promotor_mta')->nullable();
-            $table->string('doc_listado_firmas')->nullable();
-            $table->string('doc_aval_cc')->nullable();
-            $table->string('doc_constancia_cc');
-            $table->string('doc_rif_mta');
-            $table->unsignedBigInteger('mesa_tecnica_id');
+            $table->timestamps();
+            $table->unsignedInteger('accion');
+            $table->unsignedBigInteger('mesa_tecnica_id')->unique();
             $table->foreign('mesa_tecnica_id')->references('id')->on('mesa_tecnicas')->onDelete('cascade');
+            $table->unsignedBigInteger('registro_usuario_id')->unique();
+            $table->foreign('registro_usuario_id')->references('id')->on('registro_usuarios')->onDelete('cascade');
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('documentos');
+        Schema::dropIfExists('accions');
     }
 };

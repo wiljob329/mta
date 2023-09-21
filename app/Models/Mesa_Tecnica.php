@@ -21,4 +21,8 @@ class Mesa_Tecnica extends Model
     {
         return $this->hasOne(Documento::class);
     }
+    public function accion()
+    {
+        return $this->hasOne(Accion::class);
+    }
 }

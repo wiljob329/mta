@@ -30,6 +30,26 @@
   <script>
     window.addEventListener('load', () => {
       $.notify("{{session('error')}}", "error");
+      const modalRegistroMta = document.querySelector('#registroMta');
+      console.log(modalRegistroMta);
+      if (modalRegistroMta) {
+        modalRegistroMta.modal({
+          show: true
+        });
+      }
+    })
+
+  </script>
+  @endif
+
+  @if (Session::has('errors'))
+  <script>
+    window.addEventListener('load', () => {
+      const modalRegistroMta = document.querySelector('#registroMta');
+      if (modalRegistroMta) {
+        const bootstrapModal = new bootstrap.Modal(modalRegistroMta);
+        bootstrapModal.show();
+      }
     })
 
   </script>

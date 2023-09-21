@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Accion;
 use App\Models\Solicitud;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -14,8 +15,9 @@ class UserController extends Controller
         Gate::authorize('user');
         $solicitud = Solicitud::where('registro_usuario_id', auth()->user()->id)
                                 ->first();
+        $registromta = Accion::where('registro_usuario_id', auth()->user()->id)->first();
 
-        return view('user-auth', compact('solicitud'));
+        return view('user-auth', compact('solicitud', 'registromta'));
         // return var_dump($solicitud);
     }
 

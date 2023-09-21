@@ -62,4 +62,8 @@ class Registro_Usuario extends Authenticatable
     {
         return $this->hasOne(Solicitud::class, 'registro_usuario_id', 'id');
     }
+    public function accion()
+    {
+        return $this->hasOne(Accion::class, 'registro_usuario_id', 'id');
+    }
 }

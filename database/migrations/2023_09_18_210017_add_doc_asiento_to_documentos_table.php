@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('parroquias', function (Blueprint $table) {
-            $table->id();
-            $table->string('parroquia');
-            $table->unsignedBigInteger('municipio_id');
-            $table->foreign('municipio_id')->references('id')->on('municipios')->onDelete('cascade');
+        Schema::table('documentos', function (Blueprint $table) {
+            //
+            $table->string('doc_asiento')->nullable();
         });
     }
 
@@ -24,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('parroquias');
+        Schema::table('documentos', function (Blueprint $table) {
+            //
+            $table->dropColumn('doc_asiento');
+        });
     }
 };

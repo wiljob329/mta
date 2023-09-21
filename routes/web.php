@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RegistroController;
+use App\Http\Controllers\RegistroMtaController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SolicitudController;
@@ -30,6 +31,10 @@ Route::get('/admin', [RoleController::class, 'createAdmin'])->name('admin')->mid
 Route::get('/registro', [RegistroController::class, 'create'])->name('registro')->middleware('guest');
 Route::post('/registro', [RegistroController::class, 'store'])->name('registro.post')->middleware('guest');
 Route::post('/parroquias', [RegistroController::class, 'parroquias'])->name('parroquias')->middleware('guest');
+
+
+Route::post('/registro-mta', [RegistroMtaController::class, 'registroMta'])->name('registro.mta')->middleware('auth');
+
 
 //Reset de contraseña
 Route::get('/reset-password',[ResetPassword::class, 'create'])->name('reset')->middleware('guest');

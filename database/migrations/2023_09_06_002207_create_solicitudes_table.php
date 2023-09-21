@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->unsignedInteger('estado');
             $table->unsignedBigInteger('registro_usuario_id')->unique();
-            $table->foreign('registro_usuario_id')->references('id')->on('registro_usuarios');
+            $table->foreign('registro_usuario_id')->references('id')->on('registro_usuarios')->onDelete('cascade');
         });
     }
 
